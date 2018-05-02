@@ -1,0 +1,35 @@
+.vt {text-align:center; word-break:break-all;white-space:normal;word-wrap:break-word; }
+
+.detail {width:100%;height:100%;}
+.detail img {max-width:100%;}
+
+.nav {height:.88rem;line-height:.88rem;font-size:.3rem;color:#ccc;padding:0px .3rem;}
+.nav a {float:left;color:#ccc;text-decoration:none;}
+.nav b {float:right;}
+
+.hero_rare {width:100%;min-height:10rem;color:#ccc;background:url(/static/hero_rare.jpg) left top no-repeat;background-size:100% 100%;color:#333;}
+.name {position:absolute;right:1.5rem;top:2rem;width:.4rem;font-size:.4rem;color:#333;text-align:center; }
+
+.order {position:absolute;bottom:.35rem;left:.95rem;width: .5rem;text-align: center;}
+
+.attr {position: absolute;top: 1.1rem;left: .4rem;width:4.8rem;height: 45%;line-height: .3rem; }
+.attr .col {width: .3rem;}
+.attr b {font-weight: 400;display:block;height: 1.6rem}
+.attr p.col {float: right;margin-left: .15rem; }
+.attr p.col_pt {padding-top: .9rem;}
+.attr div.col {float: left;margin-right: .15rem; }
+.attr div.col span {display: block;width:75%;height: 3.5rem;margin-left: .05rem}
+.attr div.col .bg_atk i {  
+background:-webkit-gradient(linear, 0 0, 0 bottom, from(#f30), to(#f90));  
+}
+
+.attr div.col .bg_atkarea i {
+background:-webkit-gradient(linear, 0 0, 0 bottom, from(#6c0), to(#0cf));  
+}
+.attr div.col .bg_def i {
+background:-webkit-gradient(linear, 0 0, 0 bottom, from(#70e), to(#8be));  
+}
+.attr div.col i {display: block;}
+
+.info {position: absolute; top: 6.2rem;left: .35rem;right:.35rem;height: 4rem;}
+.info p {width: .3rem;float: right;margin-left: .2rem;}
