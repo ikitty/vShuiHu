@@ -67,7 +67,9 @@ export default {
         //todo set data?
         this.heroData = HeroData
         this.index = this.$route.query.id
-        this.contH = (document.documentElement.clientHeight - 44)*2/100
+
+        var remRatio = document.documentElement.clientWidth/750*100
+        this.contH = (document.documentElement.clientHeight - 44)/remRatio
 
         this.hero = this.heroData[this.index-1]
         let D = this.hero
