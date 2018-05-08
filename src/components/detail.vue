@@ -5,7 +5,7 @@
         <b @click="toggleCard">{{nextStatus}}</b>
     </div>
 
-    <p class="img_wrap" v-show="showCover"><img :src=" heroPath +index + '.jpg' "  /></p>
+    <p class="img_wrap" v-show="showCover" :style="'height:' + contH + 'rem'"><img :src=" heroPath +index + '.jpg' "  /></p>
 
     <div class="hero_rare" v-show="!showCover" :style="'height:' + contH + 'rem'">
         <b class="name vt">{{hero.nick + '&bull;' + hero.name}}</b>
@@ -69,7 +69,8 @@ export default {
         this.index = this.$route.query.id
 
         var remRatio = document.documentElement.clientWidth/750*100
-        this.contH = (document.documentElement.clientHeight - 44)/remRatio
+        var navH = 0.88*remRatio
+        this.contH = (document.documentElement.clientHeight - navH)/remRatio
 
         this.hero = this.heroData[this.index-1]
         let D = this.hero

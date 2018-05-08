@@ -16,7 +16,7 @@
 import HeroData from '../assets/hero_data'
 
 export default {
-    name: 'HelloWorld',
+    name: 'Index',
     data () {
         return {
             msg: 'shuihu list'

@@ -1,13 +1,17 @@
 .vt {text-align:center; word-break:break-all;white-space:normal;word-wrap:break-word; }
 
 .detail {width:100%;height:100%;}
-.detail img {max-width:100%;}
 
 .nav {height:.88rem;line-height:.88rem;font-size:.3rem;color:#ccc;padding:0px .3rem;}
 .nav a {float:left;color:#ccc;text-decoration:none;}
 .nav b {float:right;}
 
-.hero_rare {width:100%;min-height:10rem;color:#ccc;background:url(/static/hero_rare.jpg) left top no-repeat;background-size:100% 100%;color:#333;}
+.img_wrap {position: relative;width: 100%;min-height: 10rem;overflow: hidden;}
+.img_wrap img {position: absolute;top: 0;left: 50%;height:100%;transform: translateX(-50%)}
+
+
+.hero_rare {width:100%;min-height:10rem;color:#ccc;background:url(/static/hero_img/hero_rare.jpg) left top no-repeat;background-size:100% 100%;color:#333;}
+
 .name {position:absolute;right:1.5rem;top:2rem;width:.4rem;font-size:.4rem;color:#333;text-align:center; }
 
 .order {position:absolute;bottom:.35rem;left:.95rem;width: .5rem;text-align: center;}
