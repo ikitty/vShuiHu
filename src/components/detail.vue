@@ -98,7 +98,7 @@ export default {
         }
 
         let len = D.detail.length
-        let maxN = 8
+        let maxN = 15
         this.heroInfo.push('人物小传')
         for (let index = 0; index < len; index+=maxN) {
             let s = D.detail.substr(index, maxN)
