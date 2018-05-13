@@ -5,7 +5,13 @@
         <b @click="toggleCard">{{nextStatus}}</b>
     </div>
 
-    <p class="img_wrap" v-show="showCover" :style="'height:' + contH + 'rem'"><img :src=" heroPath +index + '.jpg' "  /></p>
+    <p class="img_wrap" v-show="showCover" :style="'height:' + contH + 'rem'"
+        @touchstart="doTouchStart"
+        @touchmove="doTouchMove"
+        @touchend="doTouchEnd"
+        >
+        <img :src=" heroPath +index + '.jpg' "  />
+    </p>
 
     <div class="hero_rare" v-show="!showCover" :style="'height:' + contH + 'rem'">
         <b class="name vt">{{hero.nick + '&bull;' + hero.name}}</b>
@@ -61,6 +67,10 @@ export default {
             ,contH: '12.06'
             ,heroStar: ''
             ,heroInfo: []
+            ,_startX:0
+            ,_startY:0
+            ,_moveX:0
+            ,_moveY:0
         }
     }
     ,mounted(){
@@ -115,6 +125,44 @@ export default {
                 this.showCover = true
                 this.nextStatus = '卡背'
             }
+        }
+        ,doTouchStart(e){
+            // console.log('touch start', e);
+            let touch = (e.touches || e.originalEvent.touches)[0] 
+            this._startX = touch.clientX;
+            this._startY = touch.clientY;
+        }
+        ,doTouchMove(e){
+            let touch = (e.touches || e.originalEvent.touches)[0] 
+            this._moveX = touch.clientX - this._startX;
+            this._moveY = touch.clientY - this._startY;
+        }
+        ,doTouchEnd(){
+            let cb = (dir)=>{
+                if (dir == 'left') {
+                    console.log('go left', 1);
+                    this.$router.push({path:'detail?id=4'})    
+                }else{
+                    console.log('go right', 1);
+
+                }
+            }
+            let absMoveY = Math.abs(this._moveY) 
+                ,absMoveX = Math.abs(this._moveX)
+                ,xMove = 1
+                ;
+            xMove = (absMoveX > absMoveY ? 1 : 0)
+
+            let dir = 'up'
+            if (absMoveX > 30 && xMove){
+                dir = this._moveX > 0 ? 'right' : 'left'
+                cb(dir);
+            }else if (absMoveY > 30){
+                dir = this._moveY > 0 ? 'down' : 'up'
+                // cb(dir);
+            }
+            this._moveX = 0 ;
+            this._moveY = 0 ;
         }
     }
 }
