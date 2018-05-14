@@ -10,7 +10,7 @@
 .img_wrap img {position: absolute;top: 0;left: 50%;height:100%;transform: translateX(-50%)}
 
 
-.hero_rare {width:100%;min-height:10rem;color:#ccc;background:url(/static/hero_img/hero_rare.jpg) left top no-repeat;background-size:100% 100%;color:#333;}
+.hero_rare {width:100%;min-height:10rem;color:#ccc;background:url(../../static/hero_img/hero_rare.jpg) left top no-repeat;background-size:100% 100%;color:#333;}
 
 .name {position:absolute;right:1.5rem;top:2rem;width:.4rem;font-size:.4rem;color:#333;text-align:center; }
 

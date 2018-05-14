@@ -21,7 +21,7 @@ export default {
         return {
             msg: 'shuihu list'
             ,heroData: []
-            ,heroPath: '/static/hero_img/'
+            ,heroPath: './static/hero_img/'
         }
     }
     ,mounted(){

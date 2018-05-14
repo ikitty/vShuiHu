@@ -59,7 +59,8 @@ export default {
     data () {
         return {
             heroData: []
-            ,heroPath: '/static/hero_img/'
+            ,heroPath:  './static/hero_img/'
+            // ,heroPath: process.env.appPath + 'static/hero_img/'
             ,index: 1
             ,hero: {}
             ,showCover: true
@@ -73,7 +74,27 @@ export default {
             ,_moveY:0
         }
     }
+    ,created(){
+        console.log('created', 1);
+    }
+    ,beforeRouteEnter(to, from, next){
+        console.log('to', to);
+        next()
+    }
+    ,beforeRouteUpdate(to,from,next){
+        // console.log('to', to);
+        let id = 1*to.query.id || 1
+        id = id > 108 ? 108 : id
+        this.index = id
+        next()
+    }
+    ,watch: {
+        index: function(v){
+            this.hero = this.heroData[v-1]
+        }
+    }
     ,mounted(){
+        console.log('mounted', 1);
         //todo set data?
         this.heroData = HeroData
         this.index = this.$route.query.id
@@ -141,9 +162,10 @@ export default {
             let cb = (dir)=>{
                 if (dir == 'left') {
                     console.log('go left', 1);
-                    this.$router.push({path:'detail?id=4'})    
+                    this.$router.push({path:'detail?id=' + (1*this.index+1)})    
                 }else{
                     console.log('go right', 1);
+                    this.$router.push({path:'detail?id=' + (1*this.index-1)})    
 
                 }
             }
